@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:background="?attr/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Include the Custom Toolbar -->
+        <include
+            layout="@layout/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+        <!-- Main Content Area -->
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- Registration Title -->
+                    <TextView
+                        android:id="@+id/tvRegistrationTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tutor Registration"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="24dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <!-- Profile Picture Upload Section -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/profilePicCard"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        app:cardCornerRadius="60dp"
+                        app:cardElevation="4dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvRegistrationTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <ImageView
+                            android:id="@+id/ivProfilePic"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/btnUploadPic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Photo"
+                        android:backgroundTint="?attr/colorSecondary"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/profilePicCard"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:cornerRadius="8dp"/>
+
+                    <!-- Personal Information Section -->
+                    <TextView
+                        android:id="@+id/tvPersonalInfoSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Information"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/btnUploadPic"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- Location Input -->
+                    <TextView
+                        android:id="@+id/tvLocationLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="16sp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPersonalInfoSection"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="4dp"
+                        android:spinnerMode="dropdown"
+                        app:boxStrokeColor="?attr/colorSecondary"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLocationLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <!-- Subject Input -->
+                    <TextView
+                        android:id="@+id/tvSubjectLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Subject"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="16sp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnerLocation"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spinnerSubject"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="4dp"
+                        android:spinnerMode="dropdown"
+                        app:boxStrokeColor="?attr/colorSecondary"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSubjectLabel"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                    <!-- Price Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/priceInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Hourly Rate (ZAR)"
+                        app:boxStrokeColor="?attr/colorSecondary"
+                        app:hintTextColor="?attr/colorSecondary"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnerSubject">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Bio Input -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/bioInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="Bio (Tell students about yourself)"
+                        app:boxStrokeColor="?attr/colorSecondary"
+                        app:hintTextColor="?attr/colorSecondary"
+                        app:layout_constraintTop_toBottomOf="@+id/priceInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textMultiLine"
+                            android:minLines="3"
+                            android:gravity="top"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Qualities Section -->
+                    <TextView
+                        android:id="@+id/tvQualitiesSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Teaching Qualities"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/bioInputLayout"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/qualitiesChipGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvQualitiesSection"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/qualitiesInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/qualitiesChipGroup">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Enter a quality"
+                            app:boxStrokeColor="?attr/colorSecondary"
+                            app:hintTextColor="?attr/colorSecondary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etQuality"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btnAddQuality"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add"
+                            android:layout_marginStart="8dp"
+                            android:backgroundTint="?attr/colorSecondary"
+                            app:cornerRadius="8dp"/>
+
+                    </LinearLayout>
+
+
+                    <!-- Education Section -->
+                    <TextView
+                        android:id="@+id/tvEducationSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Education"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/qualitiesInputLayout"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <Button
+                        android:id="@+id/btnAddEducation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Add Education"
+                        android:backgroundTint="?attr/colorSecondary"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEducationSection"
+                        app:cornerRadius="8dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/educationContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/btnAddEducation"/>
+
+                    <!-- Certificates Section -->
+                    <TextView
+                        android:id="@+id/tvCertificatesSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Certificates"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/educationContainer"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <Button
+                        android:id="@+id/btnAddCertificate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Add Certificate"
+                        android:visibility="gone"
+                        android:backgroundTint="?attr/colorSecondary"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCertificatesSection"
+                        app:cornerRadius="8dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/certificatesContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/btnAddCertificate"/>
+
+                    <!-- Additional Options Section -->
+                    <TextView
+                        android:id="@+id/tvOptionsSection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Additional Options"
+                        android:textColor="?attr/colorSecondary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/certificatesContainer"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- First Lesson Free Switch -->
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchFirstLessonFree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Offer First Lesson Free"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOptionsSection"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- Disclaimer -->
+                    <TextView
+                        android:id="@+id/tvDisclaimer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Note: Rating and favorites will be determined by students once you start tutoring."
+                        android:textStyle="italic"
+                        android:textSize="14sp"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toBottomOf="@+id/switchFirstLessonFree"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <!-- Submit Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSubmit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Become a Tutor"
+                        android:padding="16dp"
+                        android:textColor="?attr/colorPrimary"
+                        app:backgroundTint="?attr/colorSecondary"
+                        app:cornerRadius="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDisclaimer" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_toolbar" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

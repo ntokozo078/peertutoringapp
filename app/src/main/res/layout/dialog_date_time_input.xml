@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Explanation Text -->
+    <TextView
+        android:id="@+id/tvExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select 4 dates and times when you will be available for tutoring. You can remove any selected date if necessary."
+        android:textSize="16sp"
+        android:paddingBottom="8dp" />
+
+    <!-- ChipGroup for Selected Dates -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupSelectedDates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        android:orientation="horizontal" />
+
+    <!-- Current Selection Display -->
+    <TextView
+        android:id="@+id/tvCurrentSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Currently selecting: "
+        android:textSize="16sp"
+        android:paddingBottom="8dp"
+        android:textStyle="bold" />
+
+    <!-- Date and Time Picker Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPickDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pick Date"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:textColor="?attr/colorPrimary"
+            app:backgroundTint="?attr/colorSecondary"
+            app:cornerRadius="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPickTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pick Time"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:textColor="?attr/colorPrimary"
+            app:backgroundTint="?attr/colorSecondary"
+            app:cornerRadius="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Submit Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Submit"
+        android:padding="16dp"
+        android:textColor="?attr/colorPrimary"
+        app:backgroundTint="?attr/colorSecondary"
+        app:cornerRadius="8dp"/>
+
+
+</LinearLayout>

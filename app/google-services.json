@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165410083771",
+    "project_id": "tutor-space-f1d8c",
+    "storage_bucket": "tutor-space-f1d8c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165410083771:android:70946895ea69ab86dcea9e",
+        "android_client_info": {
+          "package_name": "com.niquewrld.tutorspace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6fDsoQdtoIN-ibJgulR9fIKDU_aughUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

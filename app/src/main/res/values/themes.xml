@@ -1,0 +1,89 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TutorSpace" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorSecondary">#FF5252</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+
+        <item name="colorControlActivated">?attr/colorSecondary</item>
+        <!-- color for unchecked icons/text if needed -->
+        <item name="colorOnSurface">@color/black</item>
+
+
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.TutorSpace" parent="Base.Theme.TutorSpace" />
+
+
+    <style name="Name">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:fontFamily">roboto</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Text1">
+        <item name="android:fontWeight" tools:targetApi="o">400</item>
+        <item name="android:fontFamily">roboto</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Text2">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:fontFamily">roboto</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="AppHeading">
+        <item name="android:textStyle">italic</item>
+        <item name="android:fontFamily">@font/amarante</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="AppName">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:fontFamily">@font/amethysta</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="AppText1">
+        <item name="android:fontWeight" tools:targetApi="o">400</item>
+        <item name="android:fontFamily">@font/amethysta</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="AppText2">
+        <item name="android:fontWeight" tools:targetApi="o">500</item>
+        <item name="android:fontFamily">@font/amethysta</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="DatePickerDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorAccent">?attr/colorSecondary</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="DatePickerButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+    <style name="TimePickerDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog">
+        <item name="colorAccent">?attr/colorSecondary</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/DatePickerButtonStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/DatePickerButtonStyle</item>
+    </style>
+
+    <style name="BlackButtonDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/BlackButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/BlackButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/BlackButtonStyle</item>
+    </style>
+
+    <style name="BlackButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
+
+</resources>

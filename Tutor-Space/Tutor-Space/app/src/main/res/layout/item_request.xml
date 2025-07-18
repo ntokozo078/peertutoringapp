@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@android:color/white"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tvTutorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..........."
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTutorSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..........."
+        android:textStyle="italic"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..........."
+        android:textSize="12sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- The RatingBar to be shown when condition is met -->
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:numStars="5"
+        android:stepSize="1.0" />
+
+
+    <!-- Buttons for conditional actions -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pay"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..........."
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Open Chat"
+        android:backgroundTint="?attr/colorSecondary"
+        android:textColor="?attr/colorPrimary"
+        app:cornerRadius="8dp"
+        android:visibility="gone"
+        android:padding="10dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnChooseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:text="Choose Date"
+        android:backgroundTint="?attr/colorSecondary"
+        android:textColor="?attr/colorPrimary"
+        app:cornerRadius="8dp"
+        android:padding="10dp"
+        app:strokeColor="?attr/colorPrimary"
+        app:strokeWidth="1dp" />
+
+
+    <LinearLayout
+        android:id="@+id/llConfirmBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Accept"
+            android:backgroundTint="?attr/colorSecondary"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"
+            app:cornerRadius="8dp"
+            android:padding="10dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDecline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Decline"
+            android:backgroundTint="?attr/colorSecondary"
+            android:textColor="?attr/colorPrimary"
+            app:cornerRadius="8dp"
+            android:padding="10dp"
+            app:strokeColor="?attr/colorPrimary"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+</LinearLayout>

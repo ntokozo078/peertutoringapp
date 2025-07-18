@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Tags Count Text -->
+    <TextView
+        android:id="@+id/tagsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0/6 selected"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Instructions -->
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select the modules that match your interests or study topics. You can choose up to 6 modules."
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/tagsCount"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <!-- Category Spinner -->
+
+    <!-- Search Tags Input -->
+    <EditText
+        android:id="@+id/searchTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Modules"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <!-- Selected Tags ChipGroup with Horizontal Scroll -->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchTags"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/selectedTagsGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:chipSpacing="4dp"
+            app:singleLine="true" />
+    </HorizontalScrollView>
+
+    <!-- Tags RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTags"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <!-- Next Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Next"
+        android:padding="16dp"
+        android:textColor="?attr/colorPrimary"
+        app:backgroundTint="?attr/colorSecondary"
+        android:textAllCaps="false"
+        android:enabled="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cornerRadius="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
